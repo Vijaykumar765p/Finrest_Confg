@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Setup_and_Configuration_suite" preserve-order="true" parallel="false" verbose="10">
+	<test name="Configuration">
+		<classes>
+			<class name="configuration.AddOrg" />
+			<class name="configuration.AddBranch" />
+			<class name="configuration.EditBranch" />
+			<class name="configuration.AddAcctSchms" />
+			<class name="configuration.EditAcctSchms" />
+			<class name="configuration.AddDepositSchemes" />
+			<class name="configuration.EditDepositSchemes" />
+			<class name="configuration.EditMonthtlyDeposit" />
+			<class name="configuration.AddLoanSchemes" />
+			<class name="configuration.EditLoanSchms" />
+			<class name="configuration.AddShraesSetting" />
+			<class name="configuration.EditShareSettings" />
+			<!-- <class name="configuration.AddIntrestPostinSt" /> -->
+			<!-- <class name="configuration.EditIntrestposting" /> -->
+			<!-- <class name="configuration.EditFixedDeposit" /> -->
+			<class name="configuration.CasteMaster" />
+			<class name="configuration.Holiday" />
+			<class name="configuration.AddDeleteUser" />
+<!-- 			<class name="configuration.ResetPW" /> -->
+		</classes>
+	</test>
+</suite>

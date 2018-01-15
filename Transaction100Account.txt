@@ -1,0 +1,3285 @@
+package scripts;
+
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+
+public class Gmaillogin {
+	@Test
+	public void executSessionOne() throws InterruptedException
+	{ 
+			System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+			WebDriver driver = new ChromeDriver(); 
+			driver.get("http://192.168.1.60/finrest/");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+			driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+			driver.findElement(By.id("uc_login_btnlogin")).click();
+			driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Chetan");
+			Thread.sleep(2000);
+			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+			Thread.sleep(3000);	
+			driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+			Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+	        Occupation.selectByValue("Deposit"); 
+	        Thread.sleep(2000);
+	        driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+	        driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+	        WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+	        Thread.sleep(4000);
+	        driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();	
+	        Thread.sleep(4000);
+	        driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+			
+ 	    }
+	
+	 	@Test() 
+	 	
+	    public void executSessionTwo() throws InterruptedException
+		{ 
+	 		System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+			WebDriver driver = new ChromeDriver(); 
+			driver.get("http://192.168.1.60/finrest/");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+			driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+			driver.findElement(By.id("uc_login_btnlogin")).click();
+			driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Mukesh");
+			Thread.sleep(2000);
+			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+			Thread.sleep(3000);	
+			driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+			Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+	        Occupation.selectByValue("Deposit"); 
+	        Thread.sleep(1000);
+	        driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+	        driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+	        WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+	        Thread.sleep(4000);
+	        driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+	        Thread.sleep(4000);
+	        driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+	        Thread.sleep(4000);
+	        driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+			
+			 //   Select Mode = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltype")));
+		   // Mode.selectByValue("By Cash");
+			
+		  }
+		    
+	 	@Test()  
+	    public void executSessionThree() throws InterruptedException
+		{ 
+	 		System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+			WebDriver driver = new ChromeDriver(); 
+			driver.get("http://192.168.1.60/finrest/");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+			driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+			driver.findElement(By.id("uc_login_btnlogin")).click();
+			driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Aayush");
+			Thread.sleep(2000);
+			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+			Thread.sleep(3000);	
+			driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+			Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+	        Occupation.selectByValue("Deposit"); 
+	        Thread.sleep(1000);
+	        driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+	        driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+	        WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+	        Thread.sleep(4000);
+	        driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();	
+	        Thread.sleep(4000);
+	        driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+			
+	        
+		}
+		    
+	    	@Test()  
+	    public void executSessionFour() throws InterruptedException
+		{ 
+	         System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+		     WebDriver driver = new ChromeDriver(); 
+		    driver.get("http://192.168.1.60/finrest/");
+		    driver.manage().window().maximize();
+		    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+		    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+		    driver.findElement(By.id("uc_login_btnlogin")).click();
+		    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+		    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Abdul");
+		    Thread.sleep(2000);
+		    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+		    Thread.sleep(3000);	
+		    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+		    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+            Occupation.selectByValue("Deposit"); 
+            Thread.sleep(1000);
+            driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+            driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+            WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+            Thread.sleep(4000);
+        driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+		
+        
+	 	  }
+	
+@Test()  
+public void executSessionFive() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Anvesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+
+@Test()  
+public void executSessionSix() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ayan");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+
+@Test()  
+public void executSessionseven() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Atharva");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+
+@Test()  
+public void executSessionEight() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Akarsh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  @Test()  
+public void executSessionNine() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Goutam");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  @Test()  
+public void executSessionten() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Harshit");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  @Test()  
+public void executSessioneleven() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Komal");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessionTwelve() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Koustub");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  
+	  @Test()  
+public void executSessionThrteen() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Mukund");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessionfourteen() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Manthan");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  @Test()  
+public void executSessionfifteen() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ranj");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  @Test()  
+public void executSessionsixteen() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Manish");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  @Test()  
+public void executSessionseventeen() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Saksham");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessionEightteen() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Bhavesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+	  @Test()  
+public void executSessionninteen() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Dinraj");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("swaraj");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ 
+@Test()  
+public void executSessiontwentyone() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Sankalp");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ 
+
+@Test()  
+public void executSessiontwentytwo() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Sairaj");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+
+	  
+ @Test()  
+public void executSessiontwentethree() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Siddu");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwentyfour() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Sujal");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwentyfive() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Tanmay");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty26() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Yash");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty27() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Adish");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty28() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Akshay");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty29() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Kishor");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty30() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Manoj");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty31() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Omkar");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty32() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Rohan");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty33() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Rohan");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty34() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Sahil");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty35() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Swayam");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty36() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Swastik");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty37() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Aditya");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty38() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Harsh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty39() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Omi");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty40() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Vedant");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty41() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ankit");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty42() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Gagan");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty43() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Prem");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty44() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Maya");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty45() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ramesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty46() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Bhavesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty47() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Sunny");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty48() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Tushar");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty49() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Kesar");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty50() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Sanket");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty51() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Somesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty52() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Harish");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty53() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Rahul");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty54() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Vishal");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty55() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Prasad");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty56() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Prasad");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty57() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Prateek");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty58() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Rohit");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty59() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("sameer");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty60() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Vijay");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty61() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Varun");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty62() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Mangesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty63() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Suhas");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty64() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Balu");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty65() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ashwin");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty66() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Vaibhav");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty67() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Vinayak");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty68() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ganesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty69() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Sumit");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty70() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Viren");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty71() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ranveer");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty72() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ranbir");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty73() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Randir");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty74() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Dhiraj");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty75() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Nilesh");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty76() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Nishant");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty77() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Nakul");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty78() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Divya");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty79() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Pooja");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty80() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Prasad");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty81() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("sanjana");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty82() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Viashnavi");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty83() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Prasad");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty84() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Priyanka");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty85() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Poonam");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty86() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Priti");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty87() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Nidhi");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty88() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Shradha");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ 
+ @Test()  
+public void executSessiontwenty89() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Snehal");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty90() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Namita");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty91() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Shruti");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty92() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Radhika");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty93() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Mithila");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty94() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Manjiri");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty95() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Manasa");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty96() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Priya");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty97() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Neeta");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty98() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Maya");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty99() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Ankita");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+public void executSessiontwenty100() throws InterruptedException
+{ 
+     System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+     WebDriver driver = new ChromeDriver(); 
+    driver.get("http://192.168.1.60/finrest/");
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+    driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+    driver.findElement(By.id("uc_login_btnlogin")).click();
+    driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Manali");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+    Thread.sleep(3000);	
+    driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+    Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+    Occupation.selectByValue("Deposit"); 
+    Thread.sleep(1000);
+    driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+    driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+    WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+    Thread.sleep(4000);
+driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+Thread.sleep(4000);
+driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+
+	  }
+ @Test()  
+ public void executSessiontwenty102() throws InterruptedException
+ { 
+      System.setProperty("webdriver.chrome.driver", "C:\\java\\chromedriver.exe");	
+      WebDriver driver = new ChromeDriver(); 
+     driver.get("http://192.168.1.60/finrest/");
+     driver.manage().window().maximize();
+     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+     driver.findElement(By.id("uc_login_txtusername")).sendKeys("BELAWADI");
+     driver.findElement(By.id("uc_login_txtpassword")).sendKeys("KRC@ADMIN");
+     driver.findElement(By.id("uc_login_btnlogin")).click();
+     driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();
+     Thread.sleep(2000);
+     driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu3']/div[1]/a/span")).click();
+     driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys("Madhu");
+     Thread.sleep(2000);
+     driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']")).sendKeys(Keys.ENTER);
+     Thread.sleep(3000);	
+     driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+     Select Occupation = new Select(driver.findElement(By.id("BodyContent_ctl00_ddltrantype")));
+     Occupation.selectByValue("Deposit"); 
+     Thread.sleep(1000);
+     driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']")).sendKeys("By Cash");
+     driver.findElement(By.id("BodyContent_ctl00_txtdammount")).sendKeys("1000");
+     WebElement element = driver.findElement(By.xpath(".//*[@id='btnDWsave']"));
+     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element); 
+     Thread.sleep(4000);
+ driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
+ Thread.sleep(4000);
+ driver.findElement(By.id("BodyContent_ctl00_btnSave")).click();
+	
+ 	  }
+ 
+}
+
+	

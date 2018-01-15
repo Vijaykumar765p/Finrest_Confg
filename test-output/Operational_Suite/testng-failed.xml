@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Operational_Suite]">
+  <test name="Customer(failed)">
+    <classes>
+      <class name="Customer.AddAgent">
+        <methods>
+          <include name="createSBAccount"/>
+          <include name="cashwindowDepositMNY"/>
+          <include name="addcustomer"/>
+        </methods>
+      </class> <!-- Customer.AddAgent -->
+      <class name="Customer.AddCustomer">
+        <methods>
+          <include name="addcustomer"/>
+          <include name="GLpaymentreceipt"/>
+          <include name="createshareAccount"/>
+          <include name="cashwindowDepositMNY"/>
+          <include name="createSBAccount"/>
+          <include name="shareTransaction"/>
+        </methods>
+      </class> <!-- Customer.AddCustomer -->
+      <class name="Customer.ComplteFlow">
+        <methods>
+          <include name="createSBAccount"/>
+          <include name="cashwindowDepositMNY"/>
+          <include name="GLpaymentreceipt"/>
+        </methods>
+      </class> <!-- Customer.ComplteFlow -->
+    </classes>
+  </test> <!-- Customer(failed) -->
+  <test name="Deposits(failed)">
+    <classes>
+      <class name="Deposits.CreateDeposit">
+        <methods>
+          <include name="MonthlyScheme"/>
+        </methods>
+      </class> <!-- Deposits.CreateDeposit -->
+    </classes>
+  </test> <!-- Deposits(failed) -->
+  <test name="Loans(failed)">
+    <classes>
+      <class name="Loans.CreateLoan">
+        <methods>
+          <include name="pigmyloan"/>
+        </methods>
+      </class> <!-- Loans.CreateLoan -->
+    </classes>
+  </test> <!-- Loans(failed) -->
+</suite> <!-- Failed suite [Operational_Suite] -->

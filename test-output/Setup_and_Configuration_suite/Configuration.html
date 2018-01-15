@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>TestNG:  Configuration</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Configuration</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>19/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Dec 05 12:46:29 IST 2017</td>
+</tr>
+<tr><td>Total time:</td><td>1350 seconds (1350790 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='configuration.AddDepositSchemes.AddDeposit()'><b>AddDeposit</b><br>Test class: configuration.AddDepositSchemes</td>
+<td></td>
+<td>409</td>
+<td>configuration.AddDepositSchemes@5c7fa833</td></tr>
+<tr>
+<td title='configuration.AddAcctSchms.Addacct()'><b>Addacct</b><br>Test class: configuration.AddAcctSchms</td>
+<td></td>
+<td>29</td>
+<td>configuration.AddAcctSchms@4cc0edeb</td></tr>
+<tr>
+<td title='configuration.AddLoanSchemes.Addloan()'><b>Addloan</b><br>Test class: configuration.AddLoanSchemes</td>
+<td></td>
+<td>195</td>
+<td>configuration.AddLoanSchemes@4678c730</td></tr>
+<tr>
+<td title='configuration.CasteMaster.Caste()'><b>Caste</b><br>Test class: configuration.CasteMaster</td>
+<td></td>
+<td>40</td>
+<td>configuration.CasteMaster@cc285f4</td></tr>
+<tr>
+<td title='configuration.EditAcctSchms.EditAcctScm()'><b>EditAcctScm</b><br>Test class: configuration.EditAcctSchms</td>
+<td></td>
+<td>27</td>
+<td>configuration.EditAcctSchms@457e2f02</td></tr>
+<tr>
+<td title='configuration.EditDepositSchemes.EditDeposit()'><b>EditDeposit</b><br>Test class: configuration.EditDepositSchemes</td>
+<td></td>
+<td>58</td>
+<td>configuration.EditDepositSchemes@39aeed2f</td></tr>
+<tr>
+<td title='configuration.EditShareSettings.EditShareSt()'><b>EditShareSt</b><br>Test class: configuration.EditShareSettings</td>
+<td></td>
+<td>30</td>
+<td>configuration.EditShareSettings@c038203</td></tr>
+<tr>
+<td title='configuration.AddDeleteUser.Login()'><b>Login</b><br>Test class: configuration.AddDeleteUser</td>
+<td></td>
+<td>17</td>
+<td>configuration.AddDeleteUser@8bd1b6a</td></tr>
+<tr>
+<td title='configuration.AddBranch.addbranchd()'><b>addbranchd</b><br>Test class: configuration.AddBranch</td>
+<td></td>
+<td>53</td>
+<td>configuration.AddBranch@1b604f19</td></tr>
+<tr>
+<td title='configuration.AddOrg.addorganization()'><b>addorganization</b><br>Test class: configuration.AddOrg</td>
+<td></td>
+<td>53</td>
+<td>configuration.AddOrg@51565ec2</td></tr>
+<tr>
+<td title='configuration.AddShraesSetting.addshares()'><b>addshares</b><br>Test class: configuration.AddShraesSetting</td>
+<td></td>
+<td>71</td>
+<td>configuration.AddShraesSetting@29ee9faa</td></tr>
+<tr>
+<td title='configuration.AddDeleteUser.addusr1()'><b>addusr1</b><br>Test class: configuration.AddDeleteUser</td>
+<td></td>
+<td>21</td>
+<td>configuration.AddDeleteUser@8bd1b6a</td></tr>
+<tr>
+<td title='configuration.AddDeleteUser.addusr2()'><b>addusr2</b><br>Test class: configuration.AddDeleteUser</td>
+<td></td>
+<td>18</td>
+<td>configuration.AddDeleteUser@8bd1b6a</td></tr>
+<tr>
+<td title='configuration.AddDeleteUser.addusr3()'><b>addusr3</b><br>Test class: configuration.AddDeleteUser</td>
+<td></td>
+<td>21</td>
+<td>configuration.AddDeleteUser@8bd1b6a</td></tr>
+<tr>
+<td title='configuration.AddDeleteUser.deleteusr()'><b>deleteusr</b><br>Test class: configuration.AddDeleteUser</td>
+<td></td>
+<td>19</td>
+<td>configuration.AddDeleteUser@8bd1b6a</td></tr>
+<tr>
+<td title='configuration.EditBranch.editbranchs()'><b>editbranchs</b><br>Test class: configuration.EditBranch</td>
+<td></td>
+<td>60</td>
+<td>configuration.EditBranch@7823a2f9</td></tr>
+<tr>
+<td title='configuration.EditMonthtlyDeposit.editmis()'><b>editmis</b><br>Test class: configuration.EditMonthtlyDeposit</td>
+<td></td>
+<td>69</td>
+<td>configuration.EditMonthtlyDeposit@724af044</td></tr>
+<tr>
+<td title='configuration.Holiday.hlydy()'><b>hlydy</b><br>Test class: configuration.Holiday</td>
+<td></td>
+<td>43</td>
+<td>configuration.Holiday@55f3ddb1</td></tr>
+<tr>
+<td title='configuration.EditLoanSchms.loanscm()'><b>loanscm</b><br>Test class: configuration.EditLoanSchms</td>
+<td></td>
+<td>109</td>
+<td>configuration.EditLoanSchms@6767c1fc</td></tr>
+</table><p>
+</body>
+</html>

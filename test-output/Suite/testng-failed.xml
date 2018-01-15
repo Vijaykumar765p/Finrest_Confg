@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <test name="Regression_Test(failed)" parallel="methods">
+    <classes>
+      <class name="CrossBranch.Withdraw_Test_parallel">
+        <methods>
+          <include name="getmoney1"/>
+          <include name="getmoney2"/>
+        </methods>
+      </class> <!-- CrossBranch.Withdraw_Test_parallel -->
+    </classes>
+  </test> <!-- Regression_Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="4" name="Failed suite [Finrest_Automation]">
+  <test name="Loans(failed)">
+    <classes>
+      <class name="Loans.CreateLoan">
+        <methods>
+          <include name="pigmyloan"/>
+        </methods>
+      </class> <!-- Loans.CreateLoan -->
+    </classes>
+  </test> <!-- Loans(failed) -->
+</suite> <!-- Failed suite [Finrest_Automation] -->

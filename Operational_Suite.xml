@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Operational_Suite" preserve-order="true" parallel="false" verbose="10" >
+<test name="Customer">
+	  <classes > 
+		  <class name="Customer.ComplteFlow" />
+		  <class name="Customer.AddCustomer" />
+		  <class name="Customer.AddAgent" />
+	 </classes>
+</test>
+<test name="Deposits">
+	  <classes > 
+		  <class name="Deposits.CreateDeposit" />
+	 </classes>
+</test>
+<test name="Loans">
+	  <classes >  
+	  		<class name="Loans.CreateLoan" />
+	  </classes>
+</test>
+</suite>

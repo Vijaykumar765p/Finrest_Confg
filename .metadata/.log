@@ -1,0 +1,386 @@
+!SESSION 2017-01-25 13:08:14.620 -----------------------------------------------
+eclipse.buildId=4.6.0.I20151209-2300
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data C:\Users\mahesh.b\workspace\Finerest -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-25 13:08:45.210
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mahesh.b'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-01-30 12:33:35.833 -----------------------------------------------
+eclipse.buildId=4.6.0.I20151209-2300
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-30 12:34:20.154
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\vijay.p'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-08-04 18:10:40.953 -----------------------------------------------
+eclipse.buildId=4.6.0.I20151209-2300
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.638
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.common.doc.user_1.12.0.v201405281819-26-311A16321A3557
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.659
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.connectivity.doc.user_1.12.0.v201405281819-37D-7733L3D753L7BBF
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.660
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.connectivity.feature_1.12.0.v201406061321-7C7n9DEsxcwtN5odeWrQrgwYHq8
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.687
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.connectivity.oda.designer.core.feature_1.12.0.v201406061321-787B7PBgJ9DUBNCVAaSZ
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.700
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.connectivity.oda.designer.feature_1.12.0.v201406061321-4147w312514242925
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.701
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.connectivity.oda.feature_1.12.0.v201406061321-7E7C7YBgJ9ET9OHLDfLZ
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.702
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.doc.user_1.12.0.v201405281819-47C18w95FHAM87EJJD7
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.702
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.apache.derby.feature_1.12.0.v201406061321-777B8gBmKFQ3NjRaMjbx8GDI
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.703
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.feature_1.12.0.v201406061321-7J9t0B_0haN-EchrvGIyEh2M8j8a
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.703
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.hsqldb.feature_1.12.0.v201406061321-67G0AqGDM7KfNWJjJS8GDI
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.704
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.ibm.feature_1.12.0.v201406061321-7G-7cFD3wThz-VTq2cpq3
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.704
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.ingres.feature_1.12.0.v201406061321-540AkF78Z7UCRAQDB
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.705
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.jdbc.feature_1.12.0.v201406061321-4-49oB58B7DAF7FCH
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.705
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.jdt.feature_1.12.0.v201406061321-2-07w312218332612
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.705
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.msft.feature_1.12.0.v201406061321-5478AkF7AO7UBQAK8M
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.706
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.mysql.feature_1.12.0.v201406061321-5478AkF7AK8X9JCREG
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.706
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.oda.designer.feature_1.12.0.v201406061321-647L9oB58H5E8E8TBK
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.707
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.oda.feature_1.12.0.v201406061321-7D7U7OEVVFNSGfJoIz0Of
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.707
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.oracle.feature_1.12.0.v201406061321-548fAkF7AL7RBJANAI
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.707
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.postgresql.feature_1.12.0.v201406061321-553AkF7AK8PCRBQBP
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.708
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.sap.feature_1.12.0.v201406061321-540AkF7AJ7YEJBU7S
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.708
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.sqlite.feature_1.12.0.v201406061321-542AkF7AJ7SAKAPBF
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.709
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.enablement.sybase.feature_1.12.0.v201406061321-7E478F9NiNc2S7fxRCTD
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.709
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.intro_1.12.0.v201405281819-26-7w312116392911
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.709
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.modelbase.feature_1.12.0.v201406061321-7707GCcNBHLDaKTEcRi
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.710
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.data.feature_1.12.0.v201406061321-647ABgJ9EKDJDNAdHO
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.710
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.ddl.feature_1.12.0.v201406061321-27B-78B08EG8S_IRVNeUiL6au
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.711
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.ddlgen.feature_1.12.0.v201406061321-7A-7DF7RZHQUMdThK5_t
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.711
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.feature_1.12.0.v201406061321-7N8P7IFDri6qjCyg6Q61VhVsihvO
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.711
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.parsers.feature_1.12.0.v201406061321-623BgJ9EE9ZJRDZLA
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.712
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.results.feature_1.12.0.v201406061321-427H9oB58F6A8I5KGJ
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.712
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.schemaobjecteditor.feature_1.12.0.v201406061321-4218375LG5BJ93413
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.713
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.12.0.v201406061321-79-7FEVVFNSI_QiI-Sd
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.713
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.datatools.sqltools.doc.user_1.12.0.v201405281819-37D-7733L3D753L7BBF
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.714
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.draw2d_3.10.1.201508170204
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.714
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.e4.rcp_1.4.1.v20160212-1350
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.726
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.egit.mylyn_4.1.1.201511131810-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.727
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.egit_4.1.1.201511131810-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.727
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.codegen.ecore.ui_2.11.1.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.728
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.codegen.ecore_2.11.1.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.745
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.codegen.ui_2.8.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.745
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.codegen_2.11.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.746
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.common.ui_2.10.1.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.746
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.common_2.11.1.v20160208-0816
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.747
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.converter_2.11.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.747
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.databinding.edit_1.4.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.748
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.databinding_1.4.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.748
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.ecore.editor_2.11.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.748
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.ecore.edit_2.9.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.749
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.ecore_2.11.2.v20160208-0816
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.749
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.edit.ui_2.11.1.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.750
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.edit_2.11.1.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.750
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.mapping.ecore.editor_2.10.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.750
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.mapping.ecore_2.9.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.751
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.mapping.ui_2.9.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.751
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf.mapping_2.9.0.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.752
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.emf_2.11.2.v20160208-0841
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.752
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.epp.logging.aeri.feature_1.100.0.v20160217-0435
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.752
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.epp.mpc_1.4.2.v20160210-2005
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.753
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.epp.package.common.feature_4.5.2.20160218-0600
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.753
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.epp.package.jee.feature_4.5.2.20160218-0600
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.754
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.equinox.p2.core.feature_1.3.100.v20150527-1706
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.754
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.equinox.p2.discovery.feature_1.0.300.v20150430-1836
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.754
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.equinox.p2.extras.feature_1.2.101.v20160129-0947
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.755
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.equinox.p2.rcp.feature_1.2.101.v20150826-1318
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.755
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.equinox.p2.user.ui_2.2.102.v20160129-0947
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.756
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.gef_3.10.1.201508170204
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.756
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.help_2.1.2.v20160212-1500
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.756
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jdt_3.11.2.v20160212-1500
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.757
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jgit_4.1.1.201511131810-r
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.757
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jpt.common.eclipselink.feature_1.3.101.v201410241959
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.758
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jpt.common.feature_1.4.1.v201410241959
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.758
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jpt.dbws.eclipselink.feature_1.2.101.v201501152048
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.759
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jpt.jaxb.eclipselink.feature_1.4.102.v201501171820
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.759
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jpt.jaxb.feature_1.5.2.v201501171820
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.760
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jpt.jpa.eclipselink.feature_3.4.1.v201409111648
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.761
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jpt.jpa.feature_3.4.2.v201512181609
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.761
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.common.fproj.enablement.jdt_3.6.3.v201501141810
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.762
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.enterprise_core.feature_3.6.0.v201602161345
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.762
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.enterprise_ui.feature_3.7.0.v201602161345
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.763
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.server_adapters.ext.feature_3.3.401.v201508232356
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.763
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.server_core.feature_3.4.200.v201512031711
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.763
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.server_ui.feature_3.4.200.v201512031711
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.764
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.web_core.feature_3.7.1.v201509021802
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.765
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.web_ui.feature_3.7.1.v201512021921
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.765
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.jst.ws.jaxws.feature_1.2.203.v201602092125
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.766
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.m2e.feature_1.6.2.20150902-0002
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.766
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.m2e.logback.feature_1.6.2.20150902-0002
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.778
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.m2e.wtp.feature_1.2.1.20150819-2220
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.779
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.m2e.wtp.jaxrs.feature_1.2.1.20150819-2220
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.779
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.m2e.wtp.jpa.feature_1.2.1.20150819-2224
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.780
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.m2e.wtp.jsf.feature_1.2.1.20150819-2220
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.781
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.oomph.p2_1.3.0.v20160213-0953
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.782
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.oomph.setup.core_1.3.0.v20160213-0953
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.783
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.oomph.setup_1.3.0.v20160213-0953
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.783
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.pde_3.11.2.v20160212-1500
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.783
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.platform_4.5.2.v20160212-1500
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.784
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.rcp_4.5.2.v20160212-1500
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.784
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.recommenders.mylyn.rcp.feature_2.3.0.v20160216-1255
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.784
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.recommenders.rcp.feature_2.3.0.v20160216-1255
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.786
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.server_adapters.feature_3.2.402.v201505042029
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.786
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.server_core.feature_3.3.600.v201601132216
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.787
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.server_ui.feature_3.3.601.v201602111638
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.787
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.web_core.feature_3.7.1.v201601132216
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.788
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.web_ui.feature_3.7.1.v201602111638
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.788
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.web_userdoc.feature_3.6.0.v201405062147
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.789
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.ws_ui.feature_3.7.1.v201512021921
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.794
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.xml_core.feature_3.7.2.v201510130005
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.794
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.xml_ui.feature_3.7.2.v201511240257
+
+!ENTRY org.eclipse.update.configurator 4 0 2017-08-04 18:10:43.795
+!MESSAGE Unable to find feature.xml in directory: E:\Softwares\eclipse\features\org.eclipse.wst.xml_userdoc.feature_3.6.0.v201405062147
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-08-04 18:11:36.724
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\admin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-08-04 18:12:12.663 -----------------------------------------------
+eclipse.buildId=4.6.0.I20151209-2300
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-08-04 18:13:02.218
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\admin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

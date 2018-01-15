@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]">
+  <parameter name="author" value="Guru99"/>
+  <parameter name="searchKey" value="UK"/>
+  <test name="testGuru(failed)">
+    <parameter name="searchKey" value="UK"/>
+    <classes>
+      <class name="scripts.AddOrg">
+        <methods>
+          <include name="testParameterWithXML" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- scripts.AddOrg -->
+    </classes>
+  </test> <!-- testGuru(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

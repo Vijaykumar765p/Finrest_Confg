@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Setup_and_Configuration_suite]">
+  <test name="Configuration(failed)">
+    <classes>
+      <class name="configuration.EditShareSettings">
+        <methods>
+          <include name="EditShareSt"/>
+        </methods>
+      </class> <!-- configuration.EditShareSettings -->
+      <class name="configuration.CasteMaster">
+        <methods>
+          <include name="Caste"/>
+        </methods>
+      </class> <!-- configuration.CasteMaster -->
+      <class name="configuration.EditBranch">
+        <methods>
+          <include name="editbranchs"/>
+        </methods>
+      </class> <!-- configuration.EditBranch -->
+      <class name="configuration.AddShraesSetting">
+        <methods>
+          <include name="addshares"/>
+        </methods>
+      </class> <!-- configuration.AddShraesSetting -->
+      <class name="configuration.AddBranch">
+        <methods>
+          <include name="addbranchd"/>
+        </methods>
+      </class> <!-- configuration.AddBranch -->
+      <class name="configuration.Holiday">
+        <methods>
+          <include name="hlydy"/>
+        </methods>
+      </class> <!-- configuration.Holiday -->
+    </classes>
+  </test> <!-- Configuration(failed) -->
+</suite> <!-- Failed suite [Setup_and_Configuration_suite] -->
