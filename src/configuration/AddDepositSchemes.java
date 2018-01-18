@@ -29,7 +29,7 @@ public class AddDepositSchemes {
 	@Test
 	public void AddDeposit()
 			throws InterruptedException, EncryptedDocumentException, InvalidFormatException, IOException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");
@@ -109,7 +109,7 @@ public class AddDepositSchemes {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']")).click();
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		// RECURRING DEPOSIT
 		for (int i = 2; i < 6; i++) {
@@ -174,7 +174,7 @@ public class AddDepositSchemes {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']")).click();
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		// SHORT TERM DEPOSIT
 		for (int i = 6; i < 11; i++) {
@@ -235,7 +235,7 @@ public class AddDepositSchemes {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']")).click();
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		// MONTHLY INCOME SCHEMES
 		for (int i = 11; i < 13; i++) {
@@ -297,7 +297,7 @@ public class AddDepositSchemes {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']")).click();
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		// Double deposit
 		for (int i = 13; i < 14; i++) {
@@ -353,12 +353,15 @@ public class AddDepositSchemes {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtStartDate']")).sendKeys("01/04/2017");
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtEndDate']")).sendKeys(v8);
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//input[@id='BodyContent_ctl00_chkDouble']")).click();
+			Thread.sleep(1000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtdepositdescription']")).sendKeys(v9);
 			WebElement element = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']")).click();
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		// RSGFD
 		for (int i = 14; i < 15; i++) {
@@ -414,12 +417,15 @@ public class AddDepositSchemes {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtStartDate']")).sendKeys("01/04/2017");
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtEndDate']")).sendKeys(v8);
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//input[@id='BodyContent_ctl00_chkDouble']")).click();
+			Thread.sleep(1000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtdepositdescription']")).sendKeys(v9);
 			WebElement element = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']")).click();
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		// Five Time deposit
 		for (int i = 15; i < 16; i++) {
@@ -480,7 +486,7 @@ public class AddDepositSchemes {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnsavedepositdts']")).click();
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 		}
 		// SRS Abhivruddhi
 		for (int i = 16; i < 17; i++) {

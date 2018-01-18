@@ -1,13 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Setup_and_Configuration_suite]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test verbose="10" name="Configuration(failed)">
     <classes>
-      <class name="configuration.Preference">
+      <class name="configuration.AddLoanSchemes">
         <methods>
-          <include name="PreferenceTest"/>
+          <include name="Addloan"/>
         </methods>
-      </class> <!-- configuration.Preference -->
+      </class> <!-- configuration.AddLoanSchemes -->
+      <class name="Loans.CreateLoan">
+        <methods>
+          <include name="quit"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Loans.CreateLoan -->
+      <class name="Customer.ComplteFlow">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Customer.ComplteFlow -->
+      <class name="configuration.EditShareSettings">
+        <methods>
+          <include name="EditShareSt"/>
+        </methods>
+      </class> <!-- configuration.EditShareSettings -->
+      <class name="configuration.AddDepositSchemes">
+        <methods>
+          <include name="AddDeposit"/>
+        </methods>
+      </class> <!-- configuration.AddDepositSchemes -->
+      <class name="configuration.AddAcctSchms">
+        <methods>
+          <include name="Addacct"/>
+        </methods>
+      </class> <!-- configuration.AddAcctSchms -->
+      <class name="configuration.EditDepositSchemes">
+        <methods>
+          <include name="EditDeposit"/>
+        </methods>
+      </class> <!-- configuration.EditDepositSchemes -->
+      <class name="configuration.Holiday">
+        <methods>
+          <include name="hlydy"/>
+        </methods>
+      </class> <!-- configuration.Holiday -->
+      <class name="configuration.CasteMaster">
+        <methods>
+          <include name="Caste"/>
+        </methods>
+      </class> <!-- configuration.CasteMaster -->
+      <class name="Deposits.CreateDeposit">
+        <methods>
+          <include name="terminate"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Deposits.CreateDeposit -->
+      <class name="Customer.AddCustomer">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Customer.AddCustomer -->
+      <class name="configuration.EditAcctSchms">
+        <methods>
+          <include name="EditAcctScm"/>
+        </methods>
+      </class> <!-- configuration.EditAcctSchms -->
+      <class name="configuration.EditLoanSchms">
+        <methods>
+          <include name="loanscm"/>
+        </methods>
+      </class> <!-- configuration.EditLoanSchms -->
+      <class name="Customer.AddAgent">
+        <methods>
+          <include name="login"/>
+        </methods>
+      </class> <!-- Customer.AddAgent -->
+      <class name="configuration.EditBranch">
+        <methods>
+          <include name="editbranchs"/>
+        </methods>
+      </class> <!-- configuration.EditBranch -->
+      <class name="configuration.EditMonthtlyDeposit">
+        <methods>
+          <include name="editmis"/>
+        </methods>
+      </class> <!-- configuration.EditMonthtlyDeposit -->
+      <class name="configuration.AddOrg">
+        <methods>
+          <include name="addorganization"/>
+        </methods>
+      </class> <!-- configuration.AddOrg -->
+      <class name="configuration.AddBranch">
+        <methods>
+          <include name="addbranchd"/>
+        </methods>
+      </class> <!-- configuration.AddBranch -->
+      <class name="configuration.AddShraesSetting">
+        <methods>
+          <include name="addshares"/>
+        </methods>
+      </class> <!-- configuration.AddShraesSetting -->
+      <class name="configuration.AddDeleteUser">
+        <methods>
+          <include name="Login"/>
+        </methods>
+      </class> <!-- configuration.AddDeleteUser -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Configuration(failed) -->
+</suite> <!-- Failed suite [Setup_and_Configuration_suite] -->

@@ -19,9 +19,9 @@ public class CreateDeposit {
 	public static Properties prop = null;
 	public static FileInputStream ip = null;
 	public WebDriver driver;
-	@Test(priority = 0)
+	@Test
 	public void login() throws IOException {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");
@@ -42,12 +42,12 @@ public class CreateDeposit {
 		driver = new ChromeDriver(options);
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		driver.findElement(By.id("uc_login_txtusername")).sendKeys("admin");
-		driver.findElement(By.id("uc_login_txtpassword")).sendKeys("adminfinrest@rscs");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.findElement(By.id("uc_login_txtusername")).sendKeys(prop.getProperty("USERNAME"));
+		driver.findElement(By.id("uc_login_txtpassword")).sendKeys(prop.getProperty("PASSWORD"));
 		driver.findElement(By.id("uc_login_btnlogin")).click();
 	}
-	@Test(priority = 1,enabled = false)
+	@Test(priority = 1,enabled = true)
 	public void fixedDeposit() throws InterruptedException {
 // Create STFD
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -84,13 +84,16 @@ public class CreateDeposit {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 		
-// TransactionFD
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(".//*[@id='menu3']/div[1]")).click();
-		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu3']/div[1]/span")).click();
-		WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
-		search1.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - 00104400001 - FD");
+// Transaction STFD
 		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@id='menu3']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu3']")).click();
+		Thread.sleep(1000);
+		WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
+		search1.sendKeys("00104400001");
+		Thread.sleep(2000);
+		search1.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
 		driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
 		Select Occupation = new Select(driver.findElement(By.id("ddltrantype")));
 		Occupation.selectByValue("Deposit");
@@ -103,7 +106,7 @@ public class CreateDeposit {
 		driver.findElement(By.id("BodyContent_ctl00_txtremarks")).sendKeys("By Cash");
 		driver.findElement(By.xpath(".//*[@id='btnDWsave']")).click();
 		Thread.sleep(4000);
-		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
+//		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 		Thread.sleep(1000);
 	}
 	@Test(priority = 2,enabled=true)
@@ -145,30 +148,38 @@ public class CreateDeposit {
 		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 		
 // PigmyCollection
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@id='menu3']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu33']")).click();
+		Thread.sleep(1000);
 		WebElement searchagent = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtsearchacc']"));
 		searchagent.sendKeys("001");
 		Thread.sleep(1000);
 		searchagent.sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnScustomer']")).click();
-		WebElement pigmy = driver.findElement(By.id("BodyContent_ctl00_grdpigmydata_txtacnumber_0"));
+		Thread.sleep(1000);
+		WebElement pigmy = driver.findElement(By.xpath("//input[@id='txtaccno']"));
+		Thread.sleep(1000);
 		pigmy.sendKeys("001");
+		Thread.sleep(1000);
 		pigmy.sendKeys(Keys.TAB);
-		WebElement amount = driver.findElement(By.id("BodyContent_ctl00_grdpigmydata_txtamt_0"));
+		Thread.sleep(1000);
+		WebElement amount = driver.findElement(By.xpath("//input[@id='BodyContent_ctl00_txtamount']"));
+		Thread.sleep(1000);
 		amount.sendKeys("100");
 		Thread.sleep(1000);
-		amount.sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("//input[@id='BodyContent_ctl00_btnAdd']")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.id("BodyContent_ctl00_btnsave")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_Button1")).click();
-		driver.findElement(By.xpath(".//*[@id='menu10']/div[1]")).click();
+		driver.findElement(By.xpath("//div[@id='menu3']")).click();
+		Thread.sleep(1000);
 		Thread.sleep(1000);
 	}
-	@Test(priority = 3,enabled=false)
+	@Test(priority = 3,enabled=true)
 	private void recuringDeposit() throws InterruptedException {
 // CreateRD
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -202,10 +213,12 @@ public class CreateDeposit {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 		
-// TransactionRD
+// Transaction RD
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(".//*[@id='menu3']/div[1]")).click();
-		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu3']/div[1]/span")).click();
+		driver.findElement(By.xpath("//div[@id='menu3']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu3']")).click();
+		Thread.sleep(1000);
 		WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
 		search1.sendKeys("0010000000 - RAHUL GANESH CHOUGALA - 00104900001 - RD");
 		Thread.sleep(2000);
@@ -224,7 +237,7 @@ public class CreateDeposit {
 		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 		Thread.sleep(1000);
 	}
-	@Test(priority = 4,enabled=false)
+	@Test(priority = 4,enabled=true)
 	public void MonthlyScheme() throws InterruptedException {
 // Create MIS
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -263,8 +276,10 @@ public class CreateDeposit {
 		
 // Transaction Mis
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(".//*[@id='menu3']/div[1]")).click();
+		driver.findElement(By.xpath("//div[@id='menu3']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu3']")).click();
+		Thread.sleep(1000);
 		WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
 		search1.sendKeys("0010000000 - RAHUL GANESH CHOUGALA - 00110100001 - MIS");
 		Thread.sleep(2000);
@@ -283,7 +298,7 @@ public class CreateDeposit {
 		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 		Thread.sleep(1000);
 	}
-		@Test(priority = 5,enabled = false)
+		@Test(priority = 5,enabled = true)
 		public void doubleDeposit() throws InterruptedException {
 //	Create Double Deposit
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -322,8 +337,10 @@ public class CreateDeposit {
 			
 	// TransactionFD
 			Thread.sleep(3000);
-			driver.findElement(By.xpath(".//*[@id='menu3']/div[1]")).click();
+			driver.findElement(By.xpath("//div[@id='menu3']")).click();
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu3']")).click();
+			Thread.sleep(1000);
 			WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
 			search1.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - 00105900001 - FD");
 			Thread.sleep(1000);
@@ -342,7 +359,7 @@ public class CreateDeposit {
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 			Thread.sleep(1000);
 		}
-		@Test(priority = 6,enabled = false)
+		@Test(priority = 6,enabled = true)
 		public void RSGFDeposit() throws InterruptedException {
 //	Create RSGF Deposit
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -379,10 +396,12 @@ public class CreateDeposit {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 			
-	// TransactionFD
+	// Transaction RSGFD
 			Thread.sleep(3000);
-			driver.findElement(By.xpath(".//*[@id='menu3']/div[1]")).click();
-			driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu3']/div[1]/span")).click();
+			driver.findElement(By.xpath("//div[@id='menu3']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu3']")).click();
+			Thread.sleep(1000);
 			WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
 			search1.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - 00124600001 - FD");
 			Thread.sleep(1000);
@@ -401,7 +420,7 @@ public class CreateDeposit {
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 			Thread.sleep(1000);
 		}
-		@Test(priority = 7,enabled = false)
+		@Test(priority = 7,enabled = true)
 		public void FiveTimesDeposit() throws InterruptedException {
 //	Create Five Times Deposit
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -438,10 +457,12 @@ public class CreateDeposit {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 			
-	// TransactionFD
-			Thread.sleep(3000);
-			driver.findElement(By.xpath(".//*[@id='menu3']/div[1]")).click();
-			driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu3']/div[1]/span")).click();
+	// Transaction FTD
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@id='menu3']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu3']")).click();
+			Thread.sleep(1000);
 			WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
 			search1.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - 00130500001 - FD");
 			Thread.sleep(1000);
@@ -460,7 +481,7 @@ public class CreateDeposit {
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 			Thread.sleep(1000);
 		}
-		@Test(priority = 8,enabled=false)
+		@Test(priority = 8,enabled=true)
 		private void SRSabhivruddi() throws InterruptedException {
 // Create SRS Abhivruddhi
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -494,10 +515,12 @@ public class CreateDeposit {
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnSave']")).click();
 			
-// TransactionRD
+// Transaction SRS
 			Thread.sleep(3000);
-			driver.findElement(By.xpath(".//*[@id='menu3']/div[1]")).click();
-			driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu3']/div[1]/span")).click();
+			driver.findElement(By.xpath("//div[@id='menu3']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu3']")).click();
+			Thread.sleep(1000);
 			WebElement search1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchacc"));
 			search1.sendKeys("0010000000 - RAHUL GANESH CHOUGALA - 00131300001 - RD");
 			Thread.sleep(2000);

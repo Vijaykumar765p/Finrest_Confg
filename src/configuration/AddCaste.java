@@ -16,10 +16,10 @@ public class AddCaste extends TestBase {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[contains(@id,'menu53')]")).click();
 		Thread.sleep(1000);
-		WebElement element = driver.findElement(By.xpath(".//*[@id='div_caste']"));
+		WebElement element = driver.findElement(By.xpath("//div[contains(@id,'divmodalcaste')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(".//*[@id='div_caste']")).click();
+		driver.findElement(By.xpath("//div[contains(@id,'divmodalcaste')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtcaste']")).sendKeys("Hindu");
 		Thread.sleep(1000);

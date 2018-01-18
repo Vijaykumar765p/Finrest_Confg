@@ -20,7 +20,7 @@ public class EditLoanSchms {
 	public static FileInputStream ip = null;
 	@Test
 	public void loanscm() throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");
@@ -52,30 +52,30 @@ public class EditLoanSchms {
 		Thread.sleep(2000);
 		Select slt1 = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlsearchloantypes")));
 		slt1.selectByVisibleText("MORTGAGE LOAN");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.id("BodyContent_ctl00_btnsearchloans")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select slt2 = new Select(driver.findElement(By.id("BodyContent_ctl00_ddl_loanschemes_im")));
 		slt2.selectByVisibleText("MORTGAGE LOAN SCHEME");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.id("BodyContent_ctl00_btneditloansname")).click();
 		driver.findElement(By.id("BodyContent_ctl00_txtloanrenameschemname_im")).clear();
 		driver.findElement(By.id("BodyContent_ctl00_txtloanrenameschemname_im"))
 				.sendKeys("MORTGAGE LOAN FOR 60 MONTHS");
 		driver.findElement(By.id("BodyContent_ctl00_btneditloansname")).click();
 		// Update loan scheme button
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select slt3 = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlsearchloantypes")));
 		slt3.selectByVisibleText("MORTGAGE LOAN");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.id("BodyContent_ctl00_btnsearchloans")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select slt4 = new Select(driver.findElement(By.id("BodyContent_ctl00_ddl_loanschemes_im")));
 		slt4.selectByVisibleText("MORTGAGE LOAN FOR 60 MONTHS");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select slt5 = new Select(driver.findElement(By.id("BodyContent_ctl00_ddl_loanperiods_im")));
 		slt5.selectByVisibleText("60 Months");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.id("BodyContent_ctl00_txtloanroi_im")).clear();
 		driver.findElement(By.id("BodyContent_ctl00_txtloanroi_im")).sendKeys("15");
 		driver.findElement(By.id("BodyContent_ctl00_txtloanpenalty_im")).clear();
@@ -83,18 +83,18 @@ public class EditLoanSchms {
 		Thread.sleep(2000);
 		Select slt6 = new Select(driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_im_LoanReceivableGL']")));
 		slt6.selectByValue("4");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		Select slt7 = new Select(driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_im_LoanRecoveryGL']")));
 		slt7.selectByValue("160");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		WebElement ele = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_im_txtStartDateLoan']"));
 		ele.sendKeys("01/04/2017");
 		ele.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		WebElement ele1 = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_im_txtEndDateLoan']"));
 		ele1.sendKeys("01/04/2026");
 		ele1.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.id("BodyContent_ctl00_txtloandescription_im")).clear();
 		driver.findElement(By.id("BodyContent_ctl00_txtloandescription_im")).sendKeys("Updated");
 		// radio Button

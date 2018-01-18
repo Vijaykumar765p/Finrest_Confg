@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23982" started-at="2017-12-06T11:57:02Z" finished-at="2017-12-06T11:57:26Z">
+  <suite name="Operational_Suite" duration-ms="16255" started-at="2018-01-18T06:58:46Z" finished-at="2018-01-18T06:59:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23982" started-at="2017-12-06T11:57:02Z" finished-at="2017-12-06T11:57:26Z">
-      <class name="configuration.Preference">
-        <test-method status="PASS" signature="PreferenceTest()[pri:0, instance:configuration.Preference@56f4468b]" name="PreferenceTest" duration-ms="23927" started-at="2017-12-06T17:27:02Z" finished-at="2017-12-06T17:27:26Z">
+    <test name="Operational" duration-ms="16255" started-at="2018-01-18T06:58:46Z" finished-at="2018-01-18T06:59:02Z">
+      <class name="Customer.AddAgent">
+        <test-method status="PASS" signature="login()[pri:0, instance:Customer.AddAgent@69a3d1d]" name="login" duration-ms="8110" started-at="2018-01-18T12:28:54Z" finished-at="2018-01-18T12:29:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PreferenceTest -->
-      </class> <!-- configuration.Preference -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- login -->
+      </class> <!-- Customer.AddAgent -->
+      <class name="Customer.AddCustomer">
+        <test-method status="PASS" signature="login()[pri:0, instance:Customer.AddCustomer@2f943d71]" name="login" duration-ms="8098" started-at="2018-01-18T12:28:46Z" finished-at="2018-01-18T12:28:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- Customer.AddCustomer -->
+    </test> <!-- Operational -->
+  </suite> <!-- Operational_Suite -->
 </testng-results>

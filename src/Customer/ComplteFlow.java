@@ -20,9 +20,10 @@ public class ComplteFlow {
 	public WebDriver driver;
 	public static Properties prop = null;
 	public static FileInputStream ip = null;
-	@Test(priority=0)
+
+	@Test
 	public void login() throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");
@@ -50,7 +51,7 @@ public class ComplteFlow {
 		Thread.sleep(2000);
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void addCustomer() throws InterruptedException {
 		driver.findElement(By.id("menu1")).click();
 		driver.findElement(By.id("uc_menu_td_sub_menu1")).click();
@@ -69,8 +70,8 @@ public class ComplteFlow {
 		// Select Occupation.
 		driver.findElement(By.xpath("//input[@id='txtoccup']")).sendKeys("Salaried");
 		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//input[@id='txtoccup']")).sendKeys(Keys.ENTER);
-//		Thread.sleep(5000);
+		// driver.findElement(By.xpath("//input[@id='txtoccup']")).sendKeys(Keys.ENTER);
+		// Thread.sleep(5000);
 		// Enter Date.
 		driver.findElement(By.xpath("//input[@id='txtdobdate']")).sendKeys("25/10/1981");
 		// Enter Caste.
@@ -110,46 +111,44 @@ public class ComplteFlow {
 		Select Mar = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlMaritalStatus")));
 		Mar.selectByValue("Single");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(".//*[@id='fileIdProof']"))
-				.sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\rahulid.jpg");
-		driver.findElement(By.xpath(".//*[@id='fileAddProof']"))
-				.sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\rahulaadhar.jpg");
-		driver.findElement(By.xpath(".//*[@id='filephoto']"))
-				.sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\rahul.jpg");
-		driver.findElement(By.xpath(".//*[@id='filesign']"))
-				.sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\signature.png");
+		driver.findElement(By.xpath(".//*[@id='fileIdProof']")).sendKeys("C:\\java\\Images\\rahulid.jpg");
+		driver.findElement(By.xpath(".//*[@id='fileAddProof']")).sendKeys("C:\\java\\Images\\rahulaadhar.jpg");
+		driver.findElement(By.xpath(".//*[@id='filephoto']")).sendKeys("C:\\java\\Images\\rahul.jpg");
+		driver.findElement(By.xpath(".//*[@id='filesign']")).sendKeys("C:\\java\\Images\\signature.png");
 		Thread.sleep(5000);
 		WebElement element = driver.findElement(By.xpath("//*[@id='BodyContent_ctl00_btnSave']"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		driver.findElement(By.xpath("//*[@id='BodyContent_ctl00_btnSave']")).click();
+		element.click();
 		Thread.sleep(2000);
 		driver.findElement(By.id("BodyContent_ctl00_btnaddyes")).click();
-		Thread.sleep(3000);
-	}
-	@Test(priority = 2, enabled = false)
-	public void GLpaymentreceipt() throws InterruptedException {
-		driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();// transaction
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu35']/div[1]/span")).click();
-		Thread.sleep(2000);
-		WebElement search = driver.findElement(By.id("txtsearchGl"));
-		search.sendKeys("SHARE SUSPENSE ACCOUNT");
-		Thread.sleep(1000);
-		search.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
-		driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
-		WebElement ddl = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']"));
-		Select slt = new Select(ddl);
-		slt.selectByVisibleText("By Cash");
-		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtamount']")).sendKeys("4000");
-		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtremarks']")).sendKeys("4000 paid by cash");
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//button[@id='btnSave']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("BodyContent_ctl00_btnSaveNew")).click();
 		Thread.sleep(2000);
 	}
-	@Test(priority = 2, enabled = false)
+
+//	@Test(priority = 2, enabled = false)
+//	public void GLpaymentreceipt() throws InterruptedException {
+//		driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();// transaction
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu35']/div[1]/span")).click();
+//		Thread.sleep(2000);
+//		WebElement search = driver.findElement(By.id("txtsearchGl"));
+//		search.sendKeys("SHARE SUSPENSE ACCOUNT");
+//		Thread.sleep(1000);
+//		search.sendKeys(Keys.ENTER);
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+//		WebElement ddl = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']"));
+//		Select slt = new Select(ddl);
+//		slt.selectByVisibleText("By Cash");
+//		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtamount']")).sendKeys("4000");
+//		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtremarks']")).sendKeys("4000 paid by cash");
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//button[@id='btnSave']")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("BodyContent_ctl00_btnSaveNew")).click();
+//		Thread.sleep(2000);
+//	}
+
+	@Test(priority = 2, enabled = true)
 	public void createshareAccount() throws InterruptedException {
 		driver.findElement(By.xpath(".//*[@id='menu2']/div[1]")).click();// accounts
 																			// link
@@ -186,7 +185,7 @@ public class ComplteFlow {
 		Thread.sleep(4000);
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void shareTransaction() throws InterruptedException {
 
 		driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();// transaction link
@@ -210,7 +209,8 @@ public class ComplteFlow {
 		driver.findElement(By.id("BodyContent_ctl00_btnaddyes")).click();
 		Thread.sleep(2000);
 	}
-	@Test(priority = 4, enabled = false)
+
+	@Test(priority = 4, enabled = true)
 	public void createSBAccount() throws InterruptedException {
 		driver.findElement(By.xpath(".//*[@id='menu2']/div[1]")).click();// accounts link
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu2']/div[1]/span")).click();
@@ -245,6 +245,7 @@ public class ComplteFlow {
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(2000);
 	}
+
 	@Test(priority = 5, enabled = true)
 	public void cashwindowDepositMNY() throws InterruptedException {
 		driver.findElement(By.id("menu3")).click();// transaction link

@@ -19,7 +19,7 @@ public class ResetPW {
 
 	@Test
 	public void rstpwd() throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");

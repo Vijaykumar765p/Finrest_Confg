@@ -31,7 +31,7 @@ public class AddCustomer {
 
 	@Test
 	public void login() throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");
@@ -208,30 +208,30 @@ public class AddCustomer {
 		}
 	}
 
-	@Test(priority = 2, enabled = false)
-	public void GLpaymentreceipt() throws InterruptedException {
-		driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();// transaction
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu35']/div[1]/span")).click();
-		Thread.sleep(2000);
-		WebElement search = driver.findElement(By.id("txtsearchGl"));
-		search.sendKeys("SHARE");
-		Thread.sleep(2000);
-		search.sendKeys(Keys.DOWN);
-		// search.sendKeys(Keys.DOWN);
-		search.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
-		driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
-		WebElement ddl = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']"));
-		Select slt = new Select(ddl);
-		slt.selectByVisibleText("By Cash");
-		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtamount']")).sendKeys("10000");
-		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtremarks']")).sendKeys("10000 paid by cash");
-		driver.findElement(By.xpath(".//*[@id='btnSave']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("BodyContent_ctl00_btnSaveNew")).click();
-		Thread.sleep(2000);
-	}
+//	@Test(priority = 2, enabled = false)
+//	public void GLpaymentreceipt() throws InterruptedException {
+//		driver.findElement(By.xpath("//*[@id='menu3']/div[1]")).click();// transaction
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//*[@id='uc_menu_td_sub_menu35']/div[1]/span")).click();
+//		Thread.sleep(2000);
+//		WebElement search = driver.findElement(By.id("txtsearchGl"));
+//		search.sendKeys("SHARE");
+//		Thread.sleep(2000);
+//		search.sendKeys(Keys.DOWN);
+//		// search.sendKeys(Keys.DOWN);
+//		search.sendKeys(Keys.ENTER);
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+//		WebElement ddl = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddltype']"));
+//		Select slt = new Select(ddl);
+//		slt.selectByVisibleText("By Cash");
+//		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtamount']")).sendKeys("10000");
+//		driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_txtremarks']")).sendKeys("10000 paid by cash");
+//		driver.findElement(By.xpath(".//*[@id='btnSave']")).click();
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("BodyContent_ctl00_btnSaveNew")).click();
+//		Thread.sleep(2000);
+//	}
 
 	@Test(priority = 3, enabled = true)
 	public void createshareAccount()
@@ -258,9 +258,9 @@ public class AddCustomer {
 			driver.findElement(By.id("uc_menu_td_sub_menu2")).click();
 			WebElement search = driver.findElement(By.id("txtsearchcustomer"));
 			search.sendKeys(v);
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			search.sendKeys(Keys.ENTER);
-			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnScustomer']")).click();
+			driver.findElement(By.xpath("//input[@id='btnScustomer']")).click();
 			Thread.sleep(2000);
 			// Share Account
 			WebElement ddl1 = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddlDepositType']"));
@@ -359,7 +359,7 @@ public class AddCustomer {
 			search.sendKeys(v);
 			Thread.sleep(2000);
 			search.sendKeys(Keys.ENTER);
-			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnScustomer']")).click();
+			driver.findElement(By.xpath("//input[@id='btnScustomer']")).click();
 			Thread.sleep(2000);
 			WebElement ddl1 = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddlDepositType']"));
 			Select slt1 = new Select(ddl1);

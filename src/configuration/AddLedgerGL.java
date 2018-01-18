@@ -19,7 +19,7 @@ public class AddLedgerGL {
 	public void AddLedger() throws InvalidFormatException, IOException, InterruptedException
 
 	{
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("test-type");
 		options.addArguments("start-maximized");

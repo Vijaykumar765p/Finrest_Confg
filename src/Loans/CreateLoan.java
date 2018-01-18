@@ -1,4 +1,5 @@
 package Loans;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
@@ -12,16 +13,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
+
 public class CreateLoan {
 	public static Properties prop = null;
 	public static FileInputStream ip = null;
 	public WebDriver driver;
-	@Test(priority = 0)
+
+	@Test
 	public void login() throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");
@@ -43,93 +47,95 @@ public class CreateLoan {
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.findElement(By.id("uc_login_txtusername")).sendKeys("admin");
-		driver.findElement(By.id("uc_login_txtpassword")).sendKeys("adminfinrest@rscs");
+		driver.findElement(By.id("uc_login_txtusername")).sendKeys(prop.getProperty("USERNAME"));
+		driver.findElement(By.id("uc_login_txtpassword")).sendKeys(prop.getProperty("PASSWORD"));
 		driver.findElement(By.id("uc_login_btnlogin")).click();
 		Thread.sleep(2000);
 	}
-	@Test(priority = 1,enabled=true)
+
+	@Test(priority = 1, enabled = true)
 	public void CCL() throws InterruptedException {
 		driver.findElement(By.xpath(".//*[@id='menu4']/div[1]")).click();
-		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu4']/div[1]/span")).click();
-		// search Customer
-		driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer")).sendKeys("0010000001 - RAHUL GANESH CHOUGALA");
-		Thread.sleep(2000);
-		driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
-		WebElement element = driver.findElement(By.id("BodyContent_ctl00_btnnext"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		driver.findElement(By.id("BodyContent_ctl00_btnnext")).click();
-		Thread.sleep(3000);
-// Create LoanType
-		Select LT = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlproposedloantype")));
-		LT.selectByVisibleText("CASH CREDIT LOAN");
-		Thread.sleep(2000);
-		// scheme name
-		Select SN = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlschemename")));
-		SN.selectByVisibleText("CASH CREDIT LOAN SCHEME");
-		Thread.sleep(2000);
-		// proposed period
-		Select PP = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlperiod")));
-		PP.selectByIndex(1);
-		// required amount
-		driver.findElement(By.id("BodyContent_ctl00_txtramt")).sendKeys("10000");
-		// loan purpose
-		driver.findElement(By.id("BodyContent_ctl00_txtLoanPurpose")).sendKeys("Personal");
-		// gurantor1
-		WebElement grt1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchGuarantor1"));
-		grt1.sendKeys("Nid");
-		Thread.sleep(2000);
-		grt1.sendKeys(Keys.ENTER);
-		driver.findElement(By.id("BodyContent_ctl00_btnGuarantor1")).click();
-		Thread.sleep(2000);
-		// gurantor2
-		WebElement grt2 = driver.findElement(By.id("BodyContent_ctl00_txtsearchGuarantor2"));
-		grt2.sendKeys("Namr");
-		Thread.sleep(2000);
-		grt2.sendKeys(Keys.ENTER);
-		driver.findElement(By.id("BodyContent_ctl00_btnGuarantor2")).click();
-		Thread.sleep(2000);
-		// employment Type
-		Select Et = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlemptype")));
-		Et.selectByVisibleText("Salaried");
-		Thread.sleep(2000);
-		// employeer business
-		driver.findElement(By.id("BodyContent_ctl00_txtcom")).sendKeys("Job");
-		// annual income
-		driver.findElement(By.id("BodyContent_ctl00_txtmincome")).sendKeys("50000");
-		WebElement element1 = driver.findElement(By.id("BodyContent_ctl00_btnSavenewloan"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
-		// upload documents
-		driver.findElement(By.id("fileproperyphoto")).sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\home.jpg");
-		driver.findElement(By.id("fileincomepaper")).sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\ipaper.jpg");
-		driver.findElement(By.id("BodyContent_ctl00_btnSavenewloan")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
-		Thread.sleep(1000);
-// Loan request
-		driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu42']")).click();
-		// search customer
-		WebElement search = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
-		search.sendKeys("rahul");
-		Thread.sleep(1000);
-		search.sendKeys(Keys.ENTER);
-		driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.id("BodyContent_ctl00_grd_pendingloandetails_btn_get_0")).click();
-		WebElement element2 = driver.findElement(By.id("BodyContent_ctl00_grd_borrower_dtls_btnapprove_0"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element2);
-		Thread.sleep(2000);
-		driver.findElement(By.id("BodyContent_ctl00_grd_borrower_dtls_btnapprove_0")).click();
-		// release amount
-		driver.findElement(By.id("BodyContent_ctl00_txtdamt")).sendKeys("10000");
-		// duration
-		Select pp = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlperiod")));
-		pp.selectByIndex(1);
-		driver.findElement(By.id("BodyContent_ctl00_btnsaveloan")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
-		Thread.sleep(1000);
-// LOAN DISBURSEMENT
+//		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu4']/div[1]/span")).click();
+//		// search Customer
+//		driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer")).sendKeys("0010000001 - RAHUL GANESH CHOUGALA");
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("BodyContent_ctl00_btnScustomer")).click();
+//		Thread.sleep(1000);
+//		WebElement element = driver.findElement(By.id("BodyContent_ctl00_btnnext"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+//		driver.findElement(By.id("BodyContent_ctl00_btnnext")).click();
+//		Thread.sleep(3000);
+//		// Create LoanType
+//		Select LT = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlproposedloantype")));
+//		LT.selectByVisibleText("CASH CREDIT LOAN");
+//		Thread.sleep(2000);
+//		// scheme name
+//		Select SN = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlschemename")));
+//		SN.selectByVisibleText("CASH CREDIT LOAN SCHEME");
+//		Thread.sleep(2000);
+//		// proposed period
+//		Select PP = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlperiod")));
+//		PP.selectByIndex(1);
+//		// required amount
+//		driver.findElement(By.id("BodyContent_ctl00_txtramt")).sendKeys("10000");
+//		// loan purpose
+//		driver.findElement(By.id("BodyContent_ctl00_txtLoanPurpose")).sendKeys("Personal");
+//		// gurantor1
+//		WebElement grt1 = driver.findElement(By.id("BodyContent_ctl00_txtsearchGuarantor1"));
+//		grt1.sendKeys("Nid");
+//		Thread.sleep(2000);
+//		grt1.sendKeys(Keys.ENTER);
+//		driver.findElement(By.id("BodyContent_ctl00_btnGuarantor1")).click();
+//		Thread.sleep(2000);
+//		// gurantor2
+//		WebElement grt2 = driver.findElement(By.id("BodyContent_ctl00_txtsearchGuarantor2"));
+//		grt2.sendKeys("Namr");
+//		Thread.sleep(2000);
+//		grt2.sendKeys(Keys.ENTER);
+//		driver.findElement(By.id("BodyContent_ctl00_btnGuarantor2")).click();
+//		Thread.sleep(2000);
+//		// employment Type
+//		Select Et = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlemptype")));
+//		Et.selectByVisibleText("Salaried");
+//		Thread.sleep(2000);
+//		// employeer business
+//		driver.findElement(By.id("BodyContent_ctl00_txtcom")).sendKeys("Job");
+//		// annual income
+//		driver.findElement(By.id("BodyContent_ctl00_txtmincome")).sendKeys("50000");
+//		WebElement element1 = driver.findElement(By.id("BodyContent_ctl00_btnSavenewloan"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
+//		// upload documents
+//		driver.findElement(By.id("fileproperyphoto")).sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\home.jpg");
+//		driver.findElement(By.id("fileincomepaper")).sendKeys("C:\\Users\\vijay.p\\Downloads\\Images\\ipaper.jpg");
+//		driver.findElement(By.id("BodyContent_ctl00_btnSavenewloan")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
+//		Thread.sleep(1000);
+//		// Loan request
+//		driver.findElement(By.xpath("//div[@id='uc_menu_td_sub_menu42']")).click();
+//		// search customer
+//		WebElement search = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
+//		search.sendKeys("rahul");
+//		Thread.sleep(1000);
+//		search.sendKeys(Keys.ENTER);
+//		driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("BodyContent_ctl00_grd_pendingloandetails_btn_get_0")).click();
+//		WebElement element2 = driver.findElement(By.id("BodyContent_ctl00_grd_borrower_dtls_btnapprove_0"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element2);
+//		Thread.sleep(2000);
+//		driver.findElement(By.id("BodyContent_ctl00_grd_borrower_dtls_btnapprove_0")).click();
+//		// release amount
+//		driver.findElement(By.id("BodyContent_ctl00_txtdamt")).sendKeys("10000");
+//		// duration
+//		Select pp = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlperiod")));
+//		pp.selectByIndex(1);
+//		driver.findElement(By.id("BodyContent_ctl00_btnsaveloan")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
+//		Thread.sleep(1000);
+		// LOAN DISBURSEMENT
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu43']")).click();
 		// search customer
 		WebElement ld = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
@@ -142,14 +148,23 @@ public class CreateLoan {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element3);
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_grd_approvedloan_details_btnCompleteloan_0")).click();
-		// relaese amount
+		Thread.sleep(2000);
+		// release amount
+		Actions action = new Actions(driver);
+		WebElement click=driver.findElement(By.id("BodyContent_ctl00_txtsbacno"));
+		Thread.sleep(2000);
+		//Double click
+		action.doubleClick(click).perform();
+		Thread.sleep(2000);
+		click.sendKeys(Keys.ARROW_DOWN,Keys.ENTER);
 		driver.findElement(By.id("BodyContent_ctl00_txtreliaseamt")).sendKeys("10000");
 		driver.findElement(By.id("BodyContent_ctl00_btntransfettosbasp")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.id("BodyContent_ctl00_btntransferConfirm")).click();
+//		driver.findElement(By.id("BodyContent_ctl00_btntransferConfirm")).click();
 	}
-//	don't execute
-	@Test(priority = 2,enabled=false)
+
+	// don't execute
+	@Test(priority = 2, enabled = false)
 	public void goldloan() throws InterruptedException {
 		// create loan
 		driver.findElement(By.xpath(".//*[@id='menu4']/div[1]")).click();
@@ -236,9 +251,10 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btntransferConfirm")).click();
 	}
-	@Test(priority = 3,enabled=true)
+
+	@Test(priority = 3, enabled = false)
 	public void HYPOTHICATIONLOAN() throws InterruptedException {
-// Create loan
+		// Create loan
 		driver.findElement(By.xpath(".//*[@id='menu4']/div[1]")).click();
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu4']/div[1]/span")).click();
 		// search customer
@@ -248,7 +264,7 @@ public class CreateLoan {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		driver.findElement(By.id("BodyContent_ctl00_btnnext")).click();
 		Thread.sleep(3000);
-		//loan type
+		// loan type
 		Select LT = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlproposedloantype")));
 		LT.selectByVisibleText("HYPOTHECATION LOAN");
 		Thread.sleep(2000);
@@ -297,7 +313,7 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-// Loan request
+		// Loan request
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu42']/div[1]/span")).click();
 		WebElement search = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		search.sendKeys("rahul");
@@ -310,7 +326,7 @@ public class CreateLoan {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element3);
 		Thread.sleep(2000);
 		driver.findElement(By.id("BodyContent_ctl00_grd_borrower_dtls_btnapprove_0")).click();
-// Release amount
+		// Release amount
 		driver.findElement(By.id("BodyContent_ctl00_txtdamt")).sendKeys("10000");
 		Select pp = new Select(driver.findElement(By.id("BodyContent_ctl00_ddlperiod")));
 		pp.selectByIndex(1);
@@ -318,8 +334,8 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-		
-// LOAN DISBURSEMENT
+
+		// LOAN DISBURSEMENT
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu43']")).click();
 		WebElement ld = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		ld.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - HL");
@@ -336,9 +352,10 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btntransferConfirm")).click();
 	}
-	@Test(priority = 4,enabled=true)
+
+	@Test(priority = 4, enabled = false)
 	public void FixedDepositLoan() throws InterruptedException {
-// CreateLoan
+		// CreateLoan
 		driver.findElement(By.xpath(".//*[@id='menu4']/div[1]")).click();
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu4']/div[1]/span")).click();
 		// Search Customer
@@ -371,7 +388,7 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-// Loan Request
+		// Loan Request
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu42']/div[1]/span")).click();
 		WebElement search = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		search.sendKeys("rahul");
@@ -391,7 +408,7 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-// LOAN DISBUSRMENT
+		// LOAN DISBUSRMENT
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu43']")).click();
 		WebElement ld = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		ld.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - LAFD");
@@ -408,9 +425,10 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btntransferConfirm")).click();
 	}
-	@Test(priority = 5,enabled=true)
+
+	@Test(priority = 5, enabled = false)
 	public void pigmyloan() throws InterruptedException {
-// Create loan
+		// Create loan
 		driver.findElement(By.xpath(".//*[@id='menu4']/div[1]")).click();
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu4']/div[1]/span")).click();
 		// search customer
@@ -443,7 +461,7 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-// Loan Request
+		// Loan Request
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu42']/div[1]/span")).click();
 		WebElement search = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		search.sendKeys("rahul");
@@ -464,7 +482,7 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-// Loan disbursement
+		// Loan disbursement
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu43']")).click();
 		WebElement ld = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		ld.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - LAPD");
@@ -480,9 +498,10 @@ public class CreateLoan {
 		driver.findElement(By.id("BodyContent_ctl00_btntransfettosbasp")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btntransferConfirm")).click();
-   }
-//	Don't execute
-	@Test(priority = 6,enabled=false)
+	}
+
+	// Don't execute
+	@Test(priority = 6, enabled = false)
 	public void recuringloan() throws InterruptedException {
 		driver.findElement(By.xpath(".//*[@id='menu4']/div[1]")).click();
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu4']/div[1]/span")).click();
@@ -560,9 +579,10 @@ public class CreateLoan {
 				.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - 00101800001 - LARD");
 		driver.findElement(By.id("BodyContent_ctl00_btgo")).click();
 	}
-	@Test(priority = 7,enabled=true)
+
+	@Test(priority = 7, enabled = false)
 	public void MidTermLoan() throws InterruptedException {
-// Create loan
+		// Create loan
 		driver.findElement(By.xpath(".//*[@id='menu4']/div[1]")).click();
 		// search customer
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu4']/div[1]/span")).click();
@@ -618,7 +638,7 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-// loan request
+		// loan request
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu42']/div[1]/span")).click();
 		WebElement search = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		search.sendKeys("rahul");
@@ -640,7 +660,7 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btnyes")).click();
 		Thread.sleep(1000);
-// loan disbursement
+		// loan disbursement
 		driver.findElement(By.xpath(".//*[@id='uc_menu_td_sub_menu43']")).click();
 		WebElement ld = driver.findElement(By.id("BodyContent_ctl00_txtsearchcustomer"));
 		ld.sendKeys("0010000001 - RAHUL GANESH CHOUGALA - ML");
@@ -657,9 +677,9 @@ public class CreateLoan {
 		Thread.sleep(1000);
 		driver.findElement(By.id("BodyContent_ctl00_btntransferConfirm")).click();
 	}
+
 	@AfterTest
-	public void quit(){
-		driver.quit();
+	public void quit() {
+//		driver.quit();
 	}
 }
-

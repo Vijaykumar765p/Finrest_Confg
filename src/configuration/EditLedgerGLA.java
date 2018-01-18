@@ -21,7 +21,7 @@ public class EditLedgerGLA {
 	public static FileInputStream ip = null;
 	@Test
 	public void EditLedger() throws InvalidFormatException, IOException, InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");

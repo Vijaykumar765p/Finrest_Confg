@@ -28,9 +28,9 @@ public class AddAgent {
 	public static FileInputStream ip = null;
 	public WebDriver driver;
 
-	@Test(priority=0)
+	@Test
 	public void login() throws InterruptedException, IOException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vijay.p\\workspace\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		prop = new Properties();
 		ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\Other\\xpaths.properties");
@@ -222,7 +222,7 @@ public class AddAgent {
 			Thread.sleep(2000);
 			search.sendKeys(Keys.DOWN);
 			search.sendKeys(Keys.ENTER);
-			driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_btnScustomer']")).click();
+			driver.findElement(By.xpath("//input[@id='btnScustomer']")).click();
 			Thread.sleep(2000);
 			WebElement ddl1 = driver.findElement(By.xpath(".//*[@id='BodyContent_ctl00_ddlDepositType']"));
 			Select slt1 = new Select(ddl1);

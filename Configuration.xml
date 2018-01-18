@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Setup_and_Configuration_suite" preserve-order="true" parallel="false" verbose="10">
+<suite name="Setup_and_Configuration_suite" preserve-order="true"
+	parallel="false" verbose="10">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
 	<test name="Configuration">
 		<classes>
 			<class name="configuration.AddOrg" />
@@ -21,7 +26,7 @@
 			<class name="configuration.CasteMaster" />
 			<class name="configuration.Holiday" />
 			<class name="configuration.AddDeleteUser" />
-<!-- 			<class name="configuration.ResetPW" /> -->
+			<!-- <class name="configuration.ResetPW" /> -->
 		</classes>
 	</test>
 </suite>
